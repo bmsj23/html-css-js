@@ -11,7 +11,7 @@ const projectsContainer = document.querySelector(".projects-container");
 if (projectsContainer) {
   projectsContainer.addEventListener("click", function (e) {
     // ignore clicks on interactive elements (modal buttons, links, inputs)
-    if (e.target.closest('[data-bs-toggle], button, a, input, textarea, label')) {
+    if (e.target.closest('button, a, input, textarea')) {
       return;
     }
 
