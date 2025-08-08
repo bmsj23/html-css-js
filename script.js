@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ["San Juan", black, "black"]
   ];
   let p = 0, c = 0;
-  cursor.style.animation = "blink 0.8s infinite";
+  cursor.style.animation = "blink 1.2s infinite";
 
   (function type(){
     if(p < parts.length){
@@ -71,11 +71,41 @@ document.addEventListener("DOMContentLoaded", () => {
       cursor.style.background = color; // cursor matches current word's color
       if(c < txt.length) {
         el.textContent += txt[c++];
-        setTimeout(type, 120);
+        setTimeout(type, 90);
       } else {
         p++; c = 0;
-        setTimeout(type, 300);
+        setTimeout(type, 200);
       }
     }
   })();
+});
+
+document.querySelectorAll('a.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    let offset = 0; // default scroll position from the top of the page
+
+    if (targetId === 'about') {
+      // Scroll to 0px from top of the page (highest)
+      offset = 0; 
+    } else if (targetId === 'portfolio') {
+      // Scroll a bit further down (middle-ish)
+      // Example: 500px from top — change this number to what fits your layout
+      offset = 950;
+    } else if (targetId === 'contact') {
+      // Scroll near the bottom (lowest part)
+      // Example: 1500px from top — adjust this number as needed
+      offset = 2000;
+    }
+
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth'
+    });
+  });
 });
