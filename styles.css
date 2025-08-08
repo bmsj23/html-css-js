@@ -104,6 +104,8 @@ section {
   line-height: 1.7;
 }
 .about-photo {
+  width: 350px !important;
+  height: 350px !important;
   border-radius: 18px;
   border: 3px solid #111;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -288,6 +290,10 @@ section {
   position: relative;
 }
 
+.card-title:hover {
+  color:#34A853;
+}
+
 .stack-card {
   position: sticky;
   top: 100px;
@@ -368,6 +374,7 @@ section {
 #footer p {
   margin: 0;
   font-size: 1rem;
+  color: rgb(129, 129, 129);
 }
 
 #footer .social-icons {
@@ -375,7 +382,7 @@ section {
 }
 
 #footer .social-icons a {
-  color: #000000;
+  color: rgb(129, 129, 129);
   text-decoration: none;
   transition: color 0.3s ease;
 }
