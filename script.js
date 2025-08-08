@@ -1,4 +1,4 @@
-// Contact form alert
+// contact form alert
 document.getElementById("contactForm")
   ?.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -6,25 +6,25 @@ document.getElementById("contactForm")
     this.reset();
   });
 
-// Projects container to change color when clicking in area area
+// projects container to change color when clicking in area area
 const projectsContainer = document.querySelector(".projects-container");
 if (projectsContainer) {
   projectsContainer.addEventListener("click", function (e) {
-    // Ignore clicks on interactive elements (modal buttons, links, inputs, etc.)
+    // ignore clicks on interactive elements (modal buttons, links, inputs)
     if (e.target.closest('[data-bs-toggle], button, a, input, textarea, label')) {
       return;
     }
 
     e.stopPropagation(); 
 
-    // Change the projects-container background color randomly
+    // change the projects-container background color randomly
     this.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 85%)`;
   });
 }
 
-// Slide-up stacking animation for portfolio section using Intersection Observer
+// some animation on projects section when it comes into view
 document.addEventListener("DOMContentLoaded", function () {
-  var section = document.querySelector(".portfolio-section");
+  var section = document.querySelector(".projects-section");
   if (!section) return;
   var observer = new IntersectionObserver(
     function (entries) {
@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(section);
 });
 
+// typing effect for the name in the header
 document.addEventListener("DOMContentLoaded", () => {
   const nameEl = document.querySelector(".my-name"),
         hi = Object.assign(document.createElement("span"), {className:"black"}),
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 });
 
+// accurate scroll to sections when clicking on nav links
 document.querySelectorAll('a.nav-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -91,18 +93,17 @@ document.querySelectorAll('a.nav-link').forEach(link => {
     let offset = 0; // default scroll position from the top of the page
 
     if (targetId === 'about') {
-      // Scroll to 0px from top of the page (highest)
+      //highest part of the page
       offset = 0; 
-    } else if (targetId === 'portfolio') {
-      // Scroll a bit further down (middle-ish)
-      // Example: 500px from top — change this number to what fits your layout
+    } else if (targetId === 'projects') {
+      // middle-ish part of the page
       offset = 950;
     } else if (targetId === 'contact') {
-      // Scroll near the bottom (lowest part)
-      // Example: 1500px from top — adjust this number as needed
+      //  bottom part of the page
       offset = 2000;
     }
 
+    // scroll to the target section with smooth behavior
     window.scrollTo({
       top: offset,
       behavior: 'smooth'
