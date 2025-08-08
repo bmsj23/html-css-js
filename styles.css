@@ -22,7 +22,7 @@ body {
   transition: color 0.2s;
 }
 .navbar-nav .nav-link:hover {
-  color: #0d6efd;
+  color: #34A853;
 }
 
 #about {
@@ -42,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-.green { color: green; }
+.green { color: #34A853; }
 .black { color: black; }
 
 .cursor {
@@ -62,6 +62,20 @@ body {
 #portfolio {
   min-height: 950px;
 }
+
+#portfolio .btn {
+  border-color: #34A853;
+  color: #34A853;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#portfolio .btn:hover {
+  background-color: #34A853;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 .portfolio-section {
   transition: background 0.3s;
   padding: 40px 0;
@@ -400,5 +414,5 @@ h2 {
 }
 
 #footer .social-icons a:hover {
-  color: #4a76ee; /* Link color accent */
+  color: #4a76ee;
 }
